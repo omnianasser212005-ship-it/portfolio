@@ -1,84 +1,67 @@
 # Portfolio Website 🚀
 
-موقع البورتفوليو الشخصي المبني باستخدام **React 19**, **Vite**, و **Tailwind CSS v4**.
+Personal Portfolio built with **React 19**, **Vite 8**, and **Tailwind CSS v4**, configured for deployment on **GitHub Pages**.
 
 ---
 
-## 📁 هيكل المشروع (Project Structure)
+## 📁 Project Structure
 
 ```text
 Portfolio app/
 ├── .github/
 │   └── workflows/
-│       └── deploy.yml          # الإعداد التلقائي للنشر على GitHub Pages
-├── public/                     # الملفات والأصول الثابتة (مثل الصورة الشخصية)
+│       └── deploy.yml          # GitHub Pages deployment workflow
+├── public/                     # Public static assets
+│   ├── 404.html
 │   └── profile.jpg
-├── src/                        # أكواد التطبيق الرئيسية
-│   ├── App.tsx                 # مكون التطبيق الرئيسي
-│   ├── main.tsx                # نقطة الدخول (Entry point)
-│   ├── index.css               # تنسيقات Tailwind CSS العالمية
-│   ├── profile.jpg             # صورة الملف الشخصي
+├── src/                        # Main application source code
+│   ├── App.tsx                 # Primary App component
+│   ├── main.tsx                # React entrypoint
+│   ├── index.css               # Global Tailwind CSS entry
+│   ├── profile.jpg             # Profile image asset
 │   └── vite-env.d.ts
-├── index.html                  # الهيكل الأساسي للصفحة
-├── package.json                # التبعيات والسكربتات
-├── tsconfig.json               # إعدادات TypeScript
-└── vite.config.ts              # إعدادات Vite
+├── index.html                  # HTML Shell
+├── package.json                # Dependencies and scripts
+├── tsconfig.json               # TypeScript configuration
+└── vite.config.ts              # Vite configuration
 ```
 
 ---
 
-## 💻 التشغيل المحلي (Local Development)
+## 💻 Local Development
 
-للتشغيل والتعديل على الجهاز المحلي:
-
-1. **تثبيت التبعيات (Install dependencies)**:
+1. **Install dependencies**:
    ```bash
    npm install
    ```
 
-2. **تشغيل خادم التطوير (Run dev server)**:
+2. **Run dev server**:
    ```bash
    npm run dev
    ```
 
-3. **بناء النسخة النهائية (Build for production)**:
+3. **Build for production**:
    ```bash
    npm run build
    ```
 
 ---
 
-## 🌐 خطوات النشر على GitHub & GitHub Pages (How to Publish)
+## 🌐 GitHub Pages Deployment
 
-### الخطوة 1: رفع الأكواد إلى GitHub (Push Code)
-
-افتح التيرمينال في مجلد المشروع وقم بتنفيذ الأوامر التالية:
+### Step 1: Push code to GitHub
 
 ```bash
 git add .
-git commit -m "Organize files and configure GitHub Pages deployment"
+git commit -m "Configure project for GitHub Pages"
 git branch -M main
 git push -u origin main
 ```
 
----
+### Step 2: Enable GitHub Pages
 
-### الخطوة 2: تفعيل GitHub Pages (Enable GitHub Pages)
-
-بعد رفع الأكواد إلى مستودعك على GitHub:
-
-1. افتح مستودع المشروع على موقع **GitHub**.
-2. اذهب إلى **Settings** (الإعدادات) في أعلى الصفحة.
-3. من القائمة الجانبية اليسرى، اضغط على **Pages**.
-4. تحت قسم **Build and deployment**:
-   - اختار المصدر (**Source**): **GitHub Actions**.
-5. سيعمل ملف الأكشنز تلقائياً بعد كل `git push` ويبني الموقع وينشره مجاناً!
-6. ستظهر لك رابط موقعك منشوراً فوراً (مثال: `https://username.github.io/portfolio/`).
-
----
-
-### ⚡ خيار بديل: النشر على Vercel أو Netlify
-
-يمكنك أيضاً ربط المستودع بـ **Vercel** أو **Netlify** مباشرة بنقرة واحدة:
-- **Build Command**: `npm run build`
-- **Output Directory**: `dist`
+1. Open your repository on **GitHub**.
+2. Go to **Settings** > **Pages**.
+3. Under **Build and deployment**:
+   - Set **Source** to **GitHub Actions**.
+4. GitHub Actions will build and deploy the portfolio to `https://<username>.github.io/portfolio/`.
