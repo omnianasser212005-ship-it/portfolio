@@ -449,67 +449,44 @@ function Hero() {
           </div>
         </div>
 
-        {/* ── Profile image — large, frameless, cinematic ── */}
+        {/* ── Profile image — clear, luminous, high-tech portrait ── */}
         <div className="flex justify-center md:justify-end relative">
-          {/* Deep atmospheric halo behind the subject */}
+          {/* Vibrant glowing halo behind the portrait */}
           <div
             className="absolute pointer-events-none"
             style={{
-              inset: "-15%",
+              inset: "-10%",
               background:
-                "radial-gradient(ellipse 65% 75% at 52% 48%, rgba(20,24,32,0.90) 0%, rgba(10,12,18,0.55) 35%, transparent 68%)",
-              filter: "blur(38px)",
+                "radial-gradient(ellipse 75% 75% at 50% 50%, rgba(99,102,241,0.28) 0%, rgba(59,130,246,0.14) 50%, transparent 80%)",
+              filter: "blur(40px)",
             }}
           />
 
-          {/* Image container — no border, no frame */}
+          {/* Image container with glowing border */}
           <div
-            className="relative"
+            className="relative overflow-hidden rounded-2xl border border-indigo-500/35 shadow-[0_0_50px_rgba(99,102,241,0.3)]"
             style={{ width: "min(520px, 90vw)", aspectRatio: "4/5" }}
           >
             <img
               src={profileImg}
-              alt="profile"
+              onError={(e) => {
+                (e.currentTarget as HTMLImageElement).src = "/profile.jpg";
+              }}
+              alt="Omnia Nasser"
               className="w-full h-full object-cover object-top block"
               style={{
-                filter: "saturate(0.8) contrast(1.0) brightness(0.65)",
-                borderRadius: "20px",
-                boxShadow: "0 0 35px rgba(59, 130, 246, 0.12)",
+                filter: "brightness(1.05) contrast(1.02)",
                 opacity: 1,
                 display: "block",
               }}
             />
 
-            {/* Bottom dissolve */}
+            {/* Subtle bottom edge dissolve */}
             <div
               className="absolute inset-0 pointer-events-none"
               style={{
                 background:
-                  "linear-gradient(to bottom, transparent 35%, rgba(4,4,10,0.55) 68%, rgba(4,4,10,0.95) 88%, rgba(4,4,10,1) 100%)",
-              }}
-            />
-            {/* Left dissolve */}
-            <div
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                background:
-                  "linear-gradient(to right, rgba(4,4,10,0.85) 0%, rgba(4,4,10,0.3) 18%, transparent 38%)",
-              }}
-            />
-            {/* Right dissolve */}
-            <div
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                background:
-                  "linear-gradient(to left, rgba(4,4,10,0.75) 0%, rgba(4,4,10,0.2) 18%, transparent 38%)",
-              }}
-            />
-            {/* Top dissolve */}
-            <div
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                background:
-                  "linear-gradient(to bottom, rgba(4,4,10,0.6) 0%, transparent 22%)",
+                  "linear-gradient(to bottom, transparent 75%, rgba(4,4,10,0.85) 100%)",
               }}
             />
 
