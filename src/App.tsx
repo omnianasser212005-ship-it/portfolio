@@ -449,10 +449,22 @@ function Hero() {
           </div>
         </div>
 
-        {/* ── Profile image — original picture without lighting modifications ── */}
+        {/* ── Profile image — large, frameless, cinematic ── */}
         <div className="flex justify-center md:justify-end relative">
+          {/* Deep atmospheric halo behind the subject */}
           <div
-            className="relative overflow-hidden rounded-2xl border border-indigo-500/20 shadow-lg"
+            className="absolute pointer-events-none"
+            style={{
+              inset: "-15%",
+              background:
+                "radial-gradient(ellipse 65% 75% at 52% 48%, rgba(20,24,32,0.90) 0%, rgba(10,12,18,0.55) 35%, transparent 68%)",
+              filter: "blur(38px)",
+            }}
+          />
+
+          {/* Image container — no border, no frame */}
+          <div
+            className="relative"
             style={{ width: "min(520px, 90vw)", aspectRatio: "4/5" }}
           >
             <img
@@ -464,12 +476,93 @@ function Hero() {
                   img.src = "profile.jpg";
                 }
               }}
-              alt="Omnia Nasser"
+              alt="profile"
               className="w-full h-full object-cover object-top block"
               style={{
+                filter: "saturate(0.8) contrast(1.0) brightness(0.65)",
+                borderRadius: "20px",
+                boxShadow: "0 0 35px rgba(59, 130, 246, 0.12)",
+                opacity: 1,
                 display: "block",
               }}
             />
+
+            {/* Bottom dissolve */}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background:
+                  "linear-gradient(to bottom, transparent 35%, rgba(4,4,10,0.55) 68%, rgba(4,4,10,0.95) 88%, rgba(4,4,10,1) 100%)",
+              }}
+            />
+            {/* Left dissolve */}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background:
+                  "linear-gradient(to right, rgba(4,4,10,0.85) 0%, rgba(4,4,10,0.3) 18%, transparent 38%)",
+              }}
+            />
+            {/* Right dissolve */}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background:
+                  "linear-gradient(to left, rgba(4,4,10,0.75) 0%, rgba(4,4,10,0.2) 18%, transparent 38%)",
+              }}
+            />
+            {/* Top dissolve */}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background:
+                  "linear-gradient(to bottom, rgba(4,4,10,0.6) 0%, transparent 22%)",
+              }}
+            />
+
+            {/* Subtle blue cinematic hint only */}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background:
+                  "radial-gradient(ellipse 70% 60% at 30% 65%, rgba(30,41,59,0.10) 0%, transparent 55%), radial-gradient(ellipse 50% 50% at 72% 28%, rgba(17,24,39,0.08) 0%, transparent 50%)",
+                mixBlendMode: "screen",
+              }}
+            />
+
+            {/* Horizontal data stream overlay — thin lines crossing the image */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+              {[18, 34, 52, 67, 80].map((pct, i) => (
+                <div
+                  key={i}
+                  className="absolute left-0 right-0 flex items-center"
+                  style={{ top: `${pct}%`, opacity: 0.18 + (i % 3) * 0.06 }}
+                >
+                  <div
+                    className="h-px flex-1"
+                    style={{
+                      background: i % 2 === 0
+                        ? "linear-gradient(to right, transparent, rgba(99,168,255,0.5), transparent)"
+                        : "linear-gradient(to right, transparent, rgba(167,139,250,0.4), transparent)",
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* Faint code fragment crossing the image */}
+            <div
+              className="absolute pointer-events-none font-mono text-[10px] text-blue-300/20 select-none hidden md:block"
+              style={{ top: "28%", left: "-6%", whiteSpace: "nowrap" }}
+            >
+              model.predict(X_test)
+            </div>
+            <div
+              className="absolute pointer-events-none font-mono text-[10px] text-violet-300/18 select-none hidden md:block"
+              style={{ top: "58%", right: "-4%", whiteSpace: "nowrap" }}
+            >
+              loss=0.0247  acc=0.961
+            </div>
           </div>
         </div>
       </div>
