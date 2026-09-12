@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-
-const profileImg = "/profile.jpg";
+import profileImg from "./profile.jpg";
 
 // ─── Canvas Background ──────────────────────────────────────────────────────
 
@@ -469,13 +468,13 @@ function Hero() {
             <img
               src={profileImg}
               alt="Profile photo"
-              className="w-full h-full object-cover object-top"
+              className="w-full h-full object-cover object-top block"
               style={{
                 filter: "saturate(0.8) contrast(1.0) brightness(0.65)",
-                maskImage:
-                  "radial-gradient(ellipse 82% 86% at 50% 42%, black 46%, rgba(0,0,0,0.80) 66%, transparent 64%)",
-                WebkitMaskImage:
-                  "radial-gradient(ellipse 82% 86% at 50% 42%, black 46%, rgba(0,0,0,0.80) 66%, transparent 64%)",
+                borderRadius: "20px",
+                boxShadow: "0 0 35px rgba(59, 130, 246, 0.12)",
+                opacity: 1,
+                display: "block",
               }}
             />
 
