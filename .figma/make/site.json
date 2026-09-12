@@ -1,7 +1,8 @@
 {
-  "description": "Showcase your professional work and projects with a sleek, customizable portfolio designed to highlight your skills and attract potential clients or employers.",
+  "title": "Omnia Nasser | Portfolio",
+  "description": "Portfolio of Omnia Nasser - Data Scientist, Machine Learning Engineer, AI Researcher.",
   "robots": {
-    "index": false
+    "index": true
   },
   "accessibility": {
     "addBypassLinks": false,

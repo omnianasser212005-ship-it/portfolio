@@ -27,10 +27,12 @@ function ParticleCanvas() {
       const direction = Math.random() > 0.5 ? 1 : -1;
       const length = 14 + Math.floor(Math.random() * 12);
       const text = Array.from({ length }, () => binaryChars[Math.floor(Math.random() * binaryChars.length)]).join(" ");
+      const ch = Math.max(canvas.height || 600, 300);
+      const cw = canvas.width || 1000;
 
       return {
-        x: direction === 1 ? -600 : canvas.width + 600,
-        y: 30 + Math.random() * (canvas.height - 60),
+        x: direction === 1 ? -600 : cw + 600,
+        y: 30 + Math.random() * Math.max(ch - 60, 100),
         text,
         speed: 0.45 + Math.random() * 0.35,
         direction,
@@ -39,8 +41,8 @@ function ParticleCanvas() {
     };
 
     const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = document.body.scrollHeight || window.innerHeight;
+      canvas.width = window.innerWidth || 1024;
+      canvas.height = Math.max(document.body?.scrollHeight || 0, window.innerHeight || 768);
     };
 
     resize();
