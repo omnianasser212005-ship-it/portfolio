@@ -449,90 +449,27 @@ function Hero() {
           </div>
         </div>
 
-        {/* ── Profile image — clear, luminous, high-tech portrait ── */}
+        {/* ── Profile image — original picture without lighting modifications ── */}
         <div className="flex justify-center md:justify-end relative">
-          {/* Vibrant glowing halo behind the portrait */}
           <div
-            className="absolute pointer-events-none"
-            style={{
-              inset: "-10%",
-              background:
-                "radial-gradient(ellipse 75% 75% at 50% 50%, rgba(99,102,241,0.28) 0%, rgba(59,130,246,0.14) 50%, transparent 80%)",
-              filter: "blur(40px)",
-            }}
-          />
-
-          {/* Image container with glowing border */}
-          <div
-            className="relative overflow-hidden rounded-2xl border border-indigo-500/35 shadow-[0_0_50px_rgba(99,102,241,0.3)]"
+            className="relative overflow-hidden rounded-2xl border border-indigo-500/20 shadow-lg"
             style={{ width: "min(520px, 90vw)", aspectRatio: "4/5" }}
           >
             <img
               src={profileImg}
               onError={(e) => {
-                (e.currentTarget as HTMLImageElement).src = "/profile.jpg";
+                const img = e.currentTarget as HTMLImageElement;
+                if (!img.dataset.retried) {
+                  img.dataset.retried = "true";
+                  img.src = "profile.jpg";
+                }
               }}
               alt="Omnia Nasser"
               className="w-full h-full object-cover object-top block"
               style={{
-                filter: "brightness(1.05) contrast(1.02)",
-                opacity: 1,
                 display: "block",
               }}
             />
-
-            {/* Subtle bottom edge dissolve */}
-            <div
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                background:
-                  "linear-gradient(to bottom, transparent 75%, rgba(4,4,10,0.85) 100%)",
-              }}
-            />
-
-            {/* Subtle blue cinematic hint only */}
-            <div
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                background:
-                  "radial-gradient(ellipse 70% 60% at 30% 65%, rgba(30,41,59,0.10) 0%, transparent 55%), radial-gradient(ellipse 50% 50% at 72% 28%, rgba(17,24,39,0.08) 0%, transparent 50%)",
-                mixBlendMode: "screen",
-              }}
-            />
-
-            {/* Horizontal data stream overlay — thin lines crossing the image */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-              {[18, 34, 52, 67, 80].map((pct, i) => (
-                <div
-                  key={i}
-                  className="absolute left-0 right-0 flex items-center"
-                  style={{ top: `${pct}%`, opacity: 0.18 + (i % 3) * 0.06 }}
-                >
-                  <div
-                    className="h-px flex-1"
-                    style={{
-                      background: i % 2 === 0
-                        ? "linear-gradient(to right, transparent, rgba(99,168,255,0.5), transparent)"
-                        : "linear-gradient(to right, transparent, rgba(167,139,250,0.4), transparent)",
-                    }}
-                  />
-                </div>
-              ))}
-            </div>
-
-            {/* Faint code fragment crossing the image */}
-            <div
-              className="absolute pointer-events-none font-mono text-[10px] text-blue-300/20 select-none hidden md:block"
-              style={{ top: "28%", left: "-6%", whiteSpace: "nowrap" }}
-            >
-              model.predict(X_test)
-            </div>
-            <div
-              className="absolute pointer-events-none font-mono text-[10px] text-violet-300/18 select-none hidden md:block"
-              style={{ top: "58%", right: "-4%", whiteSpace: "nowrap" }}
-            >
-              loss=0.0247  acc=0.961
-            </div>
           </div>
         </div>
       </div>
