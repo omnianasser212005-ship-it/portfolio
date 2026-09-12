@@ -467,7 +467,7 @@ function Hero() {
           >
             <img
               src={profileImg}
-              alt="Profile photo"
+              alt="profile"
               className="w-full h-full object-cover object-top block"
               style={{
                 filter: "saturate(0.8) contrast(1.0) brightness(0.65)",
