@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import profileImg from "@/WhatsApp Image 2026-09-11 at 11.06.10 PM.jpeg";
+import profileImg from "@/profile.jpg";
 
 // ─── Canvas Background ──────────────────────────────────────────────────────
 
