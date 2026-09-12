@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import profileImg from "@/WhatsApp Image 2026-09-11 at 11.06.10 PM.jpeg";
+import profileImg from "@/assets/profile.jpg";
 
 // ─── Canvas Background ──────────────────────────────────────────────────────
 
@@ -110,7 +110,7 @@ function ParticleCanvas() {
   );
 }
 
-// ─── Shared tokens ───────────────────────────────────────────────────────────
+// ─── Shared tokens ────────────────────────────────────────────────────────
 
 // thin blue-violet bordered glass
 const glass =
@@ -134,7 +134,7 @@ const sectionTitle = (label: string) => (
   </div>
 );
 
-// ─── Nav ─────────────────────────────────────────────────────────────────────
+// ─── Nav ───────────────────────────────────────────────────────────
 
 const navLinks = ["Home", "About", "Education", "Skills", "Experience", "Projects", "Contact"];
 
@@ -343,7 +343,7 @@ function HeroCodeStream() {
   );
 }
 
-// ─── Hero ─────────────────────────────────────────────────────────────────────
+// ─── Hero ───────────────────────────────────────────────────────────
 
 function Hero() {
   return (
@@ -430,7 +430,7 @@ function Hero() {
                 e.preventDefault();
                 document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="px-6 py-3 bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-500 hover:to-violet-500 text-white font-mono font-semibold text-sm rounded-lg transition-all duration-300 hover:shadow-[0_0_30px_rgba(99,102,241,0.45)] tracking-wider"
+              className="px-6 py-3 bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-500 hover:to-violet-500 text-white font-mono font-semibold text-sm rounded-lg transition-all duration-300"
             >
               View Projects
             </a>
@@ -440,7 +440,7 @@ function Hero() {
                 e.preventDefault();
                 document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="px-6 py-3 border border-blue-500/40 hover:border-violet-400/60 text-blue-300 hover:text-violet-300 font-mono font-semibold text-sm rounded-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(139,92,246,0.2)] backdrop-blur-sm bg-blue-500/5 tracking-wider"
+              className="px-6 py-3 border border-blue-500/40 hover:border-violet-400/60 text-blue-300 hover:text-violet-300 font-mono font-semibold text-sm rounded-lg transition-all duration-300"
             >
               Contact Me
             </a>
@@ -567,7 +567,7 @@ function Hero() {
   );
 }
 
-// ─── About ───────────────────────────────────────────────────────────────────
+// ─── About ──────────────────────────────────────────────────────────
 
 function About() {
   return (
@@ -590,7 +590,7 @@ function About() {
               <div className="text-white/45 text-sm leading-relaxed italic">
                
                 <br /><br />
-                 I’m Omnia Nasser, a Data Science and AI enthusiast passionate about using data, machine learning, and AI to solve real-world problems.
+                 I'm Omnia Nasser, a Data Science and AI enthusiast passionate about using data, machine learning, and AI to solve real-world problems.
 
                  I combine technical skills with business understanding to explore data, build intelligent models, and turn complex information into practical solutions that create real impact.  
               </div>
@@ -620,12 +620,12 @@ function About() {
   );
 }
 
-// ─── Education ───────────────────────────────────────────────────────────────
+// ─── Education ─────────────────────────────────────────────────────────
 
 const educationItems = [
-  { degree: "[Bachelor’s Degree ]", institution: "[SAMS / (MIS)]", years: "[2024 – 2027]", desc: "[MIS with a growing specialization in Data Science, Artificial Intelligence, and Machine Learning. My studies combine business and technology, while my practical training and projects focus on data analysis, machine learning, AI, and building data-driven solutions.]" },
-  { degree: "[Intern Data Science]", institution: "[Digital Egypt Pioneers Initiative - DEPI]", years: "[6 MONTHS-2027]", desc: "[A 6-month intensive training program focused on Artificial Intelligence and Data Science, covering data analysis, machine learning, deep learning, AI concepts, and hands-on projects using real-world datasets.]" },
-  { degree: "[Artificial Intelligence Trainee]", institution: "[Information Technology Institute (ITI)]", years: "[120 HOURS]", desc: "[Hands-on AI training focused on machine learning and deep learning concepts, model development, data preprocessing, and applying AI techniques to practical problems.]" },
+  { degree: "[Bachelor's Degree ]", institution: "[SAMS / (MIS)]", years: "[2024 – 2027]", desc: "[MIS with a growing specialization in Data Science, Artificial Intelligence, and Machine Learning]" },
+  { degree: "[Intern Data Science]", institution: "[Digital Egypt Pioneers Initiative - DEPI]", years: "[6 MONTHS-2027]", desc: "[A 6-month intensive training program focused on Artificial Intelligence and Data Science]" },
+  { degree: "[Artificial Intelligence Trainee]", institution: "[Information Technology Institute (ITI)]", years: "[120 HOURS]", desc: "[Hands-on AI training focused on machine learning and deep learning]" },
 ];
 
 function Education() {
@@ -669,7 +669,7 @@ function Education() {
   );
 }
 
-// ─── Skills ──────────────────────────────────────────────────────────────────
+// ─── Skills ──────────────────────────────────────────────────────────
 
 const skillCategories = [
   { category: "[SKILL CATEGORY 1]", skills: ["[Data Preprocessing]", "[Machine Learning]", "[Model Evaluation]", "[Deep Learning]", "[Statistics]"] },
@@ -694,7 +694,7 @@ function Skills() {
                 {cat.skills.map((s, j) => (
                   <span
                     key={j}
-                    className="font-mono text-xs text-white/55 border border-blue-500/15 px-3 py-1.5 rounded bg-blue-500/5 hover:border-violet-500/40 hover:text-blue-200 transition-all duration-200 cursor-default"
+                    className="font-mono text-xs text-white/55 border border-blue-500/15 px-3 py-1.5 rounded bg-blue-500/5 hover:border-violet-500/40 hover:text-blue-200 transition-all duration-200"
                   >
                     {s}
                   </span>
@@ -708,24 +708,19 @@ function Skills() {
   );
 }
 
-// ─── Work Experience ─────────────────────────────────────────────────────────
+// ─── Work Experience ───────────────────────────────────────────────────────
 
 const workItems = [
   {
     title: "[Bank Intern]", company: "[ABE Bank]", date: "[2026]",
     description: "[Practical training across operational departments, gaining exposure to banking systems, digital processes, and day-to-day banking operations.]",
-    responsibilities: ["[Gained practical exposure to banking information systems and digital processes.]", "[Observed and supported daily operational workflows across different banking departments.]", "[Developed an understanding of how technology and information systems support banking operations.]"],
+    responsibilities: ["[Gained practical exposure to banking information systems and digital processes.]", "[Observed and supported daily operational workflows across different banking departments.]"],
   },
   {
     title: "[Data Analysis Trainee]", company: "[National Telecommunication Institute (NTI)]", date: "[2026]",
-    description: "[Completed a 120-hour practical training program in data analysis, focusing on data preparation, analysis, visualization, and extracting meaningful insights from real-world datasets.]",
-    responsibilities: ["[Performed data cleaning and preprocessing using Python and SQL.]", "[Conducted exploratory data analysis and created data visualizations to identify patterns and trends]", "[Built analytical reports and dashboards using Power BI and applied data-driven insights to practical projects.]"],
+    description: "[Completed a 120-hour practical training program in data analysis, focusing on data preparation, analysis, visualization, and extracting meaningful insights from real-world data.]",
+    responsibilities: ["[Performed data cleaning and preprocessing using Python and SQL.]", "[Conducted exploratory data analysis and created data visualizations to identify patterns and trends]"],
   },
-  // {
-  //   title: "[JOB TITLE]", company: "[COMPANY]", date: "[DATE]",
-  //   description: "[DESCRIPTION OF YOUR ROLE AND RESPONSIBILITIES]",
-  //   responsibilities: ["[RESPONSIBILITY 1]", "[RESPONSIBILITY 2]"],
-  // },
 ];
 
 function WorkExperience() {
@@ -786,7 +781,7 @@ function WorkExperience() {
   );
 }
 
-// ─── Projects ─────────────────────────────────────────────────────────────────
+// ─── Projects ─────────────────────────────────────────────────────────
 
 const projects = [
   {
@@ -799,13 +794,13 @@ const projects = [
     number: "Project 2",
     file: "spam_classifier.py",
     url: "https://github.com/omnianasser212005-ship-it/Spam.git/",
-    description: "This Jupyter Notebook implements a complete machine learning pipeline to classify text messages (SMS or Emails) as **Spam** or **Ham** (legitimate) using Natural Language Processing (NLP).",
+    description: "This Jupyter Notebook implements a complete machine learning pipeline to classify text messages (SMS or Emails) as **Spam** or **Ham** (legitimate) using Natural Language Processing.",
   },
   {
     number: "Project 3",
     file: "summarize_dataset.py",
     url: "https://github.com/omnianasser212005-ship-it/summarizdataset.git/",
-    description: "Arabic Text Classification pipeline utilizing PyArabic, NLTK, TF-IDF vectorization, and Scikit-Learn models (Naïve Bayes, Logistic Regression, LinearSVC) for processing and categorizing Arabic news/articles.",
+    description: "Arabic Text Classification pipeline utilizing PyArabic, NLTK, TF-IDF vectorization, and Scikit-Learn models (Naïve Bayes, Logistic Regression, LinearSVC) for processing and categorization.",
   },
 ];
 
@@ -819,7 +814,7 @@ const CODE_IMPORTS = [
 function ProjectCard({ project, offset }: { project: typeof projects[0]; offset: number }) {
   return (
     <div
-      className="group relative rounded-xl border border-blue-500/18 bg-black/65 backdrop-blur-md overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-blue-400/40 hover:shadow-[0_0_50px_rgba(99,102,241,0.18),0_0_80px_rgba(139,92,246,0.08)]"
+      className="group relative rounded-xl border border-blue-500/18 bg-black/65 backdrop-blur-md overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-blue-400/40 hover:shadow-[0_0_30px_rgba(99,102,241,0.15)]"
       style={{ marginTop: offset }}
     >
       {/* Scanning light on hover */}
@@ -865,7 +860,7 @@ function ProjectCard({ project, offset }: { project: typeof projects[0]; offset:
           href={project.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="group/btn relative px-8 py-3 border border-blue-500/40 rounded-lg font-mono text-sm text-blue-300 bg-black/50 backdrop-blur-sm hover:border-violet-400/60 hover:text-violet-200 hover:shadow-[0_0_25px_rgba(99,102,241,0.4),inset_0_0_20px_rgba(99,102,241,0.06)] transition-all duration-300 hover:scale-105"
+          className="group/btn relative px-8 py-3 border border-blue-500/40 rounded-lg font-mono text-sm text-blue-300 bg-black/50 backdrop-blur-sm hover:border-violet-400/60 hover:text-violet-200 transition-all duration-300"
         >
           Click here
           <span
@@ -918,7 +913,7 @@ function Projects() {
   );
 }
 
-// ─── Contact ─────────────────────────────────────────────────────────────────
+// ─── Contact ──────────────────────────────────────────────────────────
 
 function Contact() {
   return (
@@ -940,33 +935,33 @@ function Contact() {
             <div className="ml-8">
               <span className="text-blue-200/70">email</span>
               <span className="text-white/35">: </span>
-              <span className="text-green-400/60">"[omnianasser2121@gmail.com]"</span>
+              <span className="text-green-400/60">"omnianasser2121@gmail.com"</span>
               <span className="text-white/35">,</span>
             </div>
             <div className="ml-8">
               <span className="text-blue-200/70">github</span>
               <span className="text-white/35">: </span>
-              <span className="text-green-400/60">"[omnianasser212005-ship-it]"</span>
+              <span className="text-green-400/60">"omnianasser212005-ship-it"</span>
               <span className="text-white/35">,</span>
             </div>
             <div className="ml-8">
               <span className="text-blue-200/70">linkedin</span>
               <span className="text-white/35">: </span>
-              <span className="text-green-400/60">"[linkedin.com/in/omnia-nasser-122a80299]"</span>
+              <span className="text-green-400/60">"linkedin.com/in/omnia-nasser-122a80299"</span>
             </div>
             <div className="text-white/75">{"}"}</div>
           </div>
 
           <div className="flex flex-wrap gap-4 mb-10">
             {[
-              { label: "Email", icon: "✉", href: "mailto:[omnianasser2121@gmail.com]" },
+              { label: "Email", icon: "✉", href: "mailto:omnianasser2121@gmail.com" },
               { label: "GitHub", icon: "⌥", href: "https://github.com/omnianasser212005-ship-it" },
               { label: "LinkedIn", icon: "⧉", href: "https://linkedin.com/in/omnia-nasser-122a80299" },
             ].map((btn) => (
               <a
                 key={btn.label}
                 href={btn.href}
-                className="flex items-center gap-2 px-5 py-3 border border-blue-500/25 text-blue-300/75 hover:text-violet-200 hover:border-violet-400/50 font-mono text-sm rounded-lg bg-blue-500/5 hover:bg-violet-500/8 hover:shadow-[0_0_20px_rgba(139,92,246,0.15)] transition-all duration-300"
+                className="flex items-center gap-2 px-5 py-3 border border-blue-500/25 text-blue-300/75 hover:text-violet-200 hover:border-violet-400/50 font-mono text-sm rounded-lg bg-blue-500/5 transition-all duration-300"
               >
                 <span>{btn.icon}</span>
                 {btn.label}
@@ -980,7 +975,7 @@ function Contact() {
             </div>
             <a
               href="mailto:omnianasser2121@gmail.com"
-              className="inline-block px-10 py-4 bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-500 hover:to-violet-500 text-white font-mono font-bold text-sm rounded-xl transition-all duration-300 hover:shadow-[0_0_40px_rgba(99,102,241,0.5)] tracking-wider"
+              className="inline-block px-10 py-4 bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-500 hover:to-violet-500 text-white font-mono font-bold text-sm rounded-xl transition-all duration-300"
             >
               Let's Connect
             </a>
@@ -991,23 +986,23 @@ function Contact() {
   );
 }
 
-// ─── Footer ──────────────────────────────────────────────────────────────────
+// ─── Footer ──────────────────────────────────────────────────────────
 
 function Footer() {
   return (
     <footer className="relative py-12 px-6 border-t border-blue-500/10">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="font-mono text-xs text-white/25">
-          © 2026 <span className="text-blue-300/55">[YOUR NAME]</span>
+          © 2026 <span className="text-blue-300/55">Omnia Nasser</span>
         </div>
-        <div className="font-mono text-xs text-white/18 italic">[YOUR TAGLINE]</div>
+        <div className="font-mono text-xs text-white/18 italic">Data Scientist | AI Enthusiast</div>
         <div className="font-mono text-xs text-white/18">&lt;/portfolio&gt;</div>
       </div>
     </footer>
   );
 }
 
-// ─── App ─────────────────────────────────────────────────────────────────────
+// ─── App ───────────────────────────────────────────────────────────
 
 export default function App() {
   return (
