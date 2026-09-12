@@ -469,13 +469,6 @@ function Hero() {
           >
             <img
               src={profileImg}
-              onError={(e) => {
-                const img = e.currentTarget as HTMLImageElement;
-                if (!img.dataset.retried) {
-                  img.dataset.retried = "true";
-                  img.src = "profile.jpg";
-                }
-              }}
               alt="profile"
               className="w-full h-full object-cover object-top block"
               style={{
