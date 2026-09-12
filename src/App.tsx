@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import profileImg from "@/profile.jpg";
+
+const profileImg = "/profile.jpg";
 
 // ─── Canvas Background ──────────────────────────────────────────────────────
 
