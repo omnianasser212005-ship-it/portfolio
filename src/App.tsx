@@ -269,8 +269,9 @@ function HeroCodeStream() {
 
     const makeStream = (forceY?: number): Stream => {
       const dir = Math.random() > 0.5 ? 1 : -1;
+      const visibleX = Math.random() * W();
       return {
-        x: dir === 1 ? -600 : W() + 600,
+        x: dir === 1 ? visibleX : W() - visibleX,
         y: forceY ?? Math.random() * H(),
         text: fragments[Math.floor(Math.random() * fragments.length)],
         speed: 0.3 + Math.random() * 0.5,
@@ -281,7 +282,7 @@ function HeroCodeStream() {
       };
     };
 
-    // Seed streams spread across Y
+    // Seed streams spread across Y and start within the visible area so they appear immediately
     const streams: Stream[] = Array.from({ length: 18 }, (_, i) =>
       makeStream((i / 18) * (canvas.height || 600) + Math.random() * 30)
     );
