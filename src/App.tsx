@@ -468,7 +468,7 @@ function Hero() {
             style={{ width: "min(520px, 90vw)", aspectRatio: "4/5" }}
           >
             <img
-              src="src/profile.jpg"
+              src={`${import.meta.env.BASE_URL}profile.jpg`}
               alt="profile"
               className="w-full h-full object-cover object-top block"
               style={{
